@@ -1,0 +1,46 @@
+class Person {
+    String name;
+    Person(String name) {
+        this.name = name;
+    }
+    void display() {
+        System.out.println("Name: " + name);
+    }
+}
+
+class Patient extends Person {
+    String disease;
+    Patient(String name, String disease) {
+        super(name);
+        this.disease = disease;
+    }
+    void display() {
+        super.display();
+        System.out.println("Disease: " + disease);
+    }
+}
+
+class AdmittedPatient extends Patient {
+    String wardNo;
+    AdmittedPatient(String name, String disease, String wardNo) {
+        super(name, disease);
+        this.wardNo = wardNo;
+    }
+    void display() {
+        super.display();
+        System.out.println("Ward No: " + wardNo);
+    }
+}
+
+public class HospitalDemo {
+    public static void main(String[] args) {
+        AdmittedPatient ap = new AdmittedPatient("Suresh", "Fever", "W12");
+        ap.display();
+    }
+}
+
+OUTPUT:
+
+Name: Suresh
+Disease: Fever
+Ward No: W12
